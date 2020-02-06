@@ -13,10 +13,10 @@ int main(void)
 	for (a = 0; a < 8; a++)
 	{
 		b = 0;
-		for (b = b + a ; b < 9; b++)
+		for (b = b + 1 ; b < 9; b++)
 		{
 			c = 0;
-			for (c = c + b; c <= 9; c++)
+			for (c = c + 2; c <= 9; c++)
 			{
 				putchar(a + '0');
 				putchar(b + '0');
