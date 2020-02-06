@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - doing the final combination of 2 2 digits numbers
- *
+ * main - print more numbers
+ * Return: 0
  */
 int main(void)
 {
@@ -10,24 +10,23 @@ int main(void)
 	int b;
 	int c;
 	int d;
-
-	for(a = 0; a <= 9; a++)
+	for (a = 0; a <= 9; a++)
 	{
-		b = 0;
-		for(; b <= 9; b++)
+		b = a + 1;
+		for (; b < 9; b++)
 		{
-			c = 0;
-			for(; b <= 9; c++)
+			c = b + 1;
+			for (; c <= 9; c++)
 			{
-				d = 0;
-				for(; d <= 9; d++)
+				d = c + 1;
+				for (; d <= 9; d++)
 				{
 					putchar(a + '0');
 					putchar(b + '0');
 					putchar(' ');
 					putchar(c + '0');
 					putchar(d + '0');
-					if (!( a == 9 && b == 9 && c == 9 && d == 9))
+					if (!(a == 9 && b == 8 && c == 9 && d == 9))
 					{
 						putchar(',');
 						putchar(' ');
@@ -38,4 +37,3 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}
