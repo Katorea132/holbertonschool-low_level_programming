@@ -10,6 +10,7 @@ int main(void)
 	int b;
 	int c;
 	int d;
+
 	for (a = 0; a <= 9; a++)
 	{
 		b = a + 1;
