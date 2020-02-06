@@ -26,9 +26,5 @@ int main(void)
 	{
 		printf("Last digit of %i is %i and is less than 6 and not 0", n, m);
 	}
-	else
-	{
-		printf("Not a valid number");
-	}
 	return (0);
 }
