@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * main - This pritns the whole abc in lower case
  * Return: 0
