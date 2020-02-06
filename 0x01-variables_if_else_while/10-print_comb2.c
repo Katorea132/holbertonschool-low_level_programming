@@ -9,15 +9,16 @@
 int main(void)
 {
 	int a = '0';
-	int b = '0';
+	int b;
 
 	while (a <= '9')
 	{
+		b = '0';
 		while (b <= '9')
 		{
 			putchar(a);
 			putchar(b);
-			if (a < '9' && b < '9')
+			if (!(a == '9' && b == '9'))
 			{
 				putchar(',');
 				putchar(' ');
