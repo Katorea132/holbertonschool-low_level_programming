@@ -1,37 +1,38 @@
 #include <stdio.h>
 
 /**
- * main - print more numbers
+ * main - this is a test for 4 loops
  * Return: 0
  */
 int main(void)
 {
 	int a;
-	int aa;
 	int b;
-	int bb;
+	int c;
+	int d;
 
-	for (a = 0; a <= 9; a++)
+	for (a = 48; a < 58; a++)
 	{
-		for (aa = 0; aa <= 9; aa++)
+		for (b = 48; b < 58; b++)
 		{
-			bb = aa + 1;
-			b = a;
-			for (; b <= 9; b++)
+			d = b + 1;
+			c = a;
+			for (; c < 58; c++)
 			{
-				for (; bb <= 9; bb++)
+				for (; d < 58; d++)
 				{
-					putchar(a + '0');
-					putchar(aa + '0');
+					putchar(a);
+					putchar(b);
 					putchar(' ');
-					putchar(b + '0');
-					putchar(bb + '0');
-					if (!(a == 9 && aa == 8 && b == 9 && bb == 9))
+					putchar(c);
+					putchar(d);
+					if (!(a == 57 && b == 56 && c == 57 && d == 57))
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
+			d = 48;
 			}
 		}
 	}
