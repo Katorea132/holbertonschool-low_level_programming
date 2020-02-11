@@ -14,7 +14,9 @@ int main(void)
 	for (; a < e && b < e;)
 	{
 		if ((b % 2) == 0)
+		{
 			c += b;
+		}
 		d = a + b;
 		a = b;
 		b = d;
