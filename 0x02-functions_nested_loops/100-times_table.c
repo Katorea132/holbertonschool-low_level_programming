@@ -7,21 +7,21 @@
  */
 void print_times_table(int n)
 {
-	int x, y, mult, one, ten, hund;
+	int a, b, c, one, ten, hund;
 
-	x = 0;
+	a = 0;
 	if (n >= 0 && n <= 15)
 	{
-		while (x <= n)
+		while (a <= n)
 		{
-			y = 0;
-			while (y <= n)
+			b = 0;
+			while (b <= n)
 			{
-				mult = x * y;
-				one = mult % 10;
-				ten = mult % 100 / 10;
-				hund = mult / 100;
-				if (hund == 0 && y != 0)
+				c = a * b;
+				one = c % 10;
+				ten = c % 100 / 10;
+				hund = c / 100;
+				if (hund == 0 && b != 0)
 				{
 					_putchar(' ');
 					if (ten == 0)
@@ -35,15 +35,15 @@ void print_times_table(int n)
 					_putchar(ten + '0');
 				}
 				_putchar(one + '0');
-				if (y != n)
+				if (b != n)
 				{
 					_putchar(',');
 					_putchar(' ');
 				}
-				y++;
+				b++;
 			}
 			_putchar('\n');
-			x++;
+			a++;
 		}
 	}
 }
