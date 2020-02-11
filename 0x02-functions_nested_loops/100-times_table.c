@@ -5,7 +5,7 @@
  * @n: holds the times
  * Return: none
  */
-void return_times_table(int n)
+void print_times_table(int n)
 {
   int a, b;
   int c, d, e ,f;
