@@ -11,7 +11,7 @@ int main(void)
 	long c = 0;
 	long d = 0;
   long e = 4000000;
-	while (a < e && b < e)
+	for (; a < e && b < e;)
 	{
 		if ((b % 2) == 0)
 			c += b;
