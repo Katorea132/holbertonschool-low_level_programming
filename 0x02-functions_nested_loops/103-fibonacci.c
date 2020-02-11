@@ -10,7 +10,7 @@ int main(void)
 	long b = 2;
 	long c = 0;
 	long d = 0;
-  long e = 4000000;
+	long e = 4000000;
 	for (; a < e && b < e;)
 	{
 		if ((b % 2) == 0)

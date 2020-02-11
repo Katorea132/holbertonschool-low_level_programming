@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-  int a;
-  long b, c, d;
+	int a;
+	long b, c, d;
 
 	b = 0;
 	c = 1;

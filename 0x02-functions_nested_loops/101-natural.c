@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - sums 
+ * main - sums
  * Return: 0
  */
 
