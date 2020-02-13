@@ -12,7 +12,7 @@ int main(void)
 
 	for (a = 2; a < sqrt(d); a++)
 	{
-		for(;d % a == 0;)
+		for (; d % a == 0;)
 		{
 			d /= a;
 		}
