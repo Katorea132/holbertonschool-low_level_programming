@@ -11,10 +11,9 @@ int main(void)
 
 	for (a = 2; a < d; a++)
 	{
-		if (a % d == 0);
+		if (a % d == 0)
 		{
-			d /= a;
-			printf("%ld, ", d);
+			d /= a;			
 		}
 	}
 	printf("%ld\n", d);
