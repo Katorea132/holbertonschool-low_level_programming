@@ -3,7 +3,7 @@
  * @c: This holds the variable
  * Return: 1 or 0 if number or not
  */
-int _isdigit(int c);
+int _isdigit(int c)
 {
 	if (c <= 57 && c >= 48)
 	{
