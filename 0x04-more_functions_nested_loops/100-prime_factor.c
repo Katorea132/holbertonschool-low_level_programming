@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	long int a;
-	long int d = 612852475143;
+	long a;
+	long d = 612852475143;
 
 	for (a = 2; a < sqrt(d); a++)
 	{
