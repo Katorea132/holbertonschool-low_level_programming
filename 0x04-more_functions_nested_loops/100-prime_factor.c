@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 
 /**
@@ -9,9 +10,9 @@ int main(void)
 	long int a;
 	long int d = 612852475143;
 
-	for (a = 2; a < d; a++)
+	for (a = 2; a < sqrt(d); a++)
 	{
-		if (a % d == 0)
+		for(;d % a == 0;)
 		{
 			d /= a;
 		}
