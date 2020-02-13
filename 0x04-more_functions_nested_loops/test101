@@ -1,0 +1,50 @@
+#include "holberton.h"
+/**
+ * print_number - prints a number with _putchar
+ * @n: holds the number
+ * Return: none
+ */
+void print_number(int n)
+{
+	int a, b, c, d;
+
+	if (n > 999)
+	{
+		a = n / 1000;
+		b = (n / 10) / 100;
+		c = ((n / 10) % 100) / 10;
+		d = (n / 10) % 10;
+		_putchar(a + '0');
+		_putchar(b + '0');
+		_putchar(c + '0');
+		_putchar(d + '0');
+	}
+	else if (n > 99 && n < 1000)
+	{
+		b = n / 100;
+		c = n % 100 / 10;
+		d = n % 10;
+		_putchar(b + '0');
+		_putchar(c + '0');
+		_putchar(d + '0');
+	}
+	else if (n < 100 && n >= 10)
+	{
+		c = n / 10;
+		d = n % 10;
+		_putchar(c + '0');
+		_putchar(d + '0');
+	}
+	else if (n < 10 && n >= 0)
+	{
+		_putchar(n + '0');
+	}
+	else if (n < 0)
+	{
+		c = (n * -1) / 10;
+		d = (n * -1) % 10;
+		_putchar('-');
+		_putchar(c + '0');
+		_putchar(d + '0');
+	}
+}
