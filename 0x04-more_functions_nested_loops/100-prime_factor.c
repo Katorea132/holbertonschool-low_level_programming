@@ -13,7 +13,7 @@ int main(void)
 	{
 		if (a % d == 0)
 		{
-			d /= a;			
+			d /= a;
 		}
 	}
 	printf("%ld\n", d);
