@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * puts2 - puts every other  character 
+ * puts2 - puts every other character
  * @str: Holds the string
  * Return: none
  */
@@ -16,4 +16,5 @@ void puts2(char *str)
 		_putchar(str[b]);
 		b++;
 	}
+	_putchar('\n');
 }
