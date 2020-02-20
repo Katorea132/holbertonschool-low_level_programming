@@ -8,6 +8,7 @@ char *rot13(char *c)
 	int a, b, f;
 	char d[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 	char e[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
+
 	f = 0;
 	for (a = 0; c[a] != 0; a++)
 	{
