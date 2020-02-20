@@ -1,24 +1,27 @@
 /**
- * rot13 - encodes in rot13
- * @c: Stores the string
- * Return: a char
+ * rot13 - rotates the char by 3 letters
+ * @c: Holds the string
+ * Return: char
  */
 char *rot13(char *c)
 {
-	int a, b, f;
-	char d[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-	char e[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-
-	for (a = 0; c[a] != 0; a++)
+	int a;
+	
+	a = 0;
+	while (c[a] != 0)
 	{
-		for (b = 0; d[b]; b++)
+		if ((c[a] <= 'm' && c[a] >= 'a') || (c[a] <= 'M' && c[a] >= 'A'))
 		{
-			if (c[a] == d[b])
+			c[a] += 13;
+		}
+		else 
+		{
+			while ((c[a] <= 'z' && c[a] >= 'n') || (c[a] <= 'Z' && c[a] >= 'N'))
 			{
-				f = b;
-				c[a] = e[f];
+				c[a] -= 13;
 			}
 		}
+		a++; 
 	}
 	return (c);
 }
