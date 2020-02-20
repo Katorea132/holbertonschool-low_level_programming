@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+void print_number(int n);
 char *rot13(char *c);
 char *leet(char *c);
 char *cap_string(char *c);
