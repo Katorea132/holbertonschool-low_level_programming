@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+char *leet(char *c);
 char *cap_string(char *c);
 char *string_toupper(char *c);
 void reverse_array(int *a, int n);
