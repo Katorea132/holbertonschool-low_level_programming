@@ -18,17 +18,6 @@ int _strcmp(char *s1, char *s2)
 	{
 		d = d + s2[b];
 	}
-	if (c - d == 0)
-	{
-		e = 1;
-	}
-	else if (c - d < 0)
-	{
-		e = -15;
-	}
-	else if (c - d > 0)
-	{
-		e = 15;
-	}
+	e = c - d;
 	return (e);
 }
