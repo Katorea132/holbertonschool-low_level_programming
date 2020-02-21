@@ -20,14 +20,12 @@ void print_buffer(char *b, int size)
 			{
 				if (c % 2 == 0 && c != 0)
 					printf(" ");
-				if ((c + 1) > size - 1)
+				if ((c + a) > size - 1)
 				{
-					printf("\t");
+					printf("  ");
 				}
 				else
-				{
 					printf("%.2x", b[a + c]);
-				}
 			}
 			printf(" ");
 			for (c = 0; c < 10; c++)
