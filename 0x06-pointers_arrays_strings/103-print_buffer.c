@@ -32,7 +32,7 @@ void print_buffer(char *b, int size)
 			printf(" ");
 			for (c = 0; c < 10; c++)
 			{
-				if ((c + a) > size -1)
+				if ((c + a) > size - 1)
 					break;
 				if (b[c + a] <= 31 || b[c + 1] >= '~')
 					b[c + a] = '.';
@@ -41,4 +41,4 @@ void print_buffer(char *b, int size)
 			printf("\n");
 		}
 	}
-}		
+}
