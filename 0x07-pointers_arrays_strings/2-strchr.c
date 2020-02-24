@@ -1,17 +1,19 @@
 /**
- * _strchar - Finds a character in a string
+ * _strchr - Finds a character in a string
  * @s: Holds the string
  * @c: Holds the test character
  * Return: Returns a char pointer
  */
 char *_strchr(char *s, char c)
 {
-	for (; s != 0; s++)
+	int a;
+
+	for (a = 0; s[a] != 0; a++)
 	{
-		if (*s == c)
+		if (s[a] == c)
 		{
-			return (s);
+			return (&s[a]);
 		}
 	}
-	return (s = '\0');
+	return (s = 0);
 }
