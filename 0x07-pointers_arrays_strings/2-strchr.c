@@ -6,17 +6,12 @@
  */
 char *_strchr(char *s, char c)
 {
-	int a;
-	char *b;
-
-	for (a = 0; s[a] != 0; a++)
+	for (; s!= 0; s++)
 	{
-		if (s[a] == c)
+		if (*s == c)
 		{
-			b = (s + a);
-			return (b);
+			return (s);
 		}
 	}
-	b = 0;
-	return(b);
+	return (s + 1);
 }
