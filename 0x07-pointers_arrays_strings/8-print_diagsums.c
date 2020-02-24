@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * print_diagmus - prints diagnola sum
+ * print_diagsums - prints diagnola sum
  * @a: Holds a pointer to an int
  * @size: holds the size
  * Return: none
