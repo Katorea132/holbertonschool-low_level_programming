@@ -3,10 +3,10 @@
  * @s: Holds the string
  * @c: Holds the test character
  * Return: Returns a char pointer
- */
+  */
 char *_strchr(char *s, char c)
 {
-	for (; s != 0; s++)
+	for (; *s != 0; s++)
 	{
 		if (*s == c)
 		{
