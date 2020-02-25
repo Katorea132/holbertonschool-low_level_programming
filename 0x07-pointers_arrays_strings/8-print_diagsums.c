@@ -8,23 +8,17 @@
 void print_diagsums(int *a, int size)
 {
 	int b;
-	int dimen = size * size;
-	int sum = 0;
+	int dimen;
+	int suma = 0;
+	int suma2 = 0;
 
-	for (b = 0; b < dimen; b++)
+	for (b = 0, dimen = 0; b < size; b++, dimen++)
 	{
-		if (b % (size + 1) == 0)
-		{
-			sum += a[b];
-		}
+		suma += *(a + (size * b) + dimen);
 	}
-	printf("%d, ", sum);
-	for (sum = 0,  b = 0; b < dimen; b++)
+	for (dimen = 0,  b = 0; b < size; b++, dimen++)
 	{
-		if (b % (size - 1) == 0 && b != (dimen - 1) && a != 0)
-		{
-			sum += a[b];
-		}
+		suma2 += *(a + (size * (b + 1)) - (dimen + 1));
 	}
-	printf("%d\n", sum);
+	printf("%d, %d\n", suma, suma2);
 }
