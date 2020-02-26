@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * swap_test - tests each value of the string
  * @b: Holds the lenght of the string
@@ -24,10 +25,5 @@ int swap_test(int b, int c, char *d)
  */
 int is_palindrome(char *s)
 {
-	int a;
-
-	for (a = 0; s[a] != 0; a++)
-	{
-	}
-	return (swap_test((a - 1), 0, s));
+	return (_strlen_recursion(s - 1), 0, s));
 }
