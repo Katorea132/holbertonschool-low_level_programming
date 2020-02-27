@@ -29,6 +29,10 @@ int wildcmp(char *s1, char *s2)
 		{
 			return (wildcmp(s1 + 1, s2));
 		}
+		else if (Wildcmp(s1, s2 + 1) == 1)
+		{
+			return (1);
+		}
 	}
 	return (0);
 }
