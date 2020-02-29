@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
-
-
 /**
  * main - prints the amount of change needed
  * @argc: Counts the arguments
@@ -12,44 +9,47 @@
  */
 int main (int argc, char *argv[])
 {
-	int a = atoi(argv[1]);
-	int b = 0;
-	char negative[] = "-";
+	int a;
+	int b;
 
-	if (argc == 2)
+	if (argc != 2)
 	{
-		if (strstr(argv[1], negative))
+		printf("Error\n");
+		return (1);
+	}
+	a = atoi(argv[1]);
+	if (a < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	else
+	{
+		for (b = 0; a > 0; b++)
 		{
-			printf("0\n");
-			return (0);
-		}
-		else
-		{
-			for(; a <= 0 && a <= 25; b++)
+			if (a >= 25)
 			{
 				a -= 25;
 			}
-			for (; a <= 0 && a <= 10; b++)
+			else if (a >= 10)
 			{
 				a -= 10;
 			}
-			for (; a <= 0 && a <= 5; b++)
+			else if (a >= 5)
 			{
 				a -= 5;
 			}
-			for (; a <= 0 && a <= 2; b++)
+			else if (a >= 2)
 			{
 				a -= 2;
 			}
-			for (; a <= 0 && a - 1 <= 0; b++)
+			else
 			{
-
 				a -= 1;
 			}
-			printf("%d\n", b);
-			return (0);
 		}
 	}
-	printf("Error\n");
-	return (1);
+	printf("%d\n", b);
+	return (0);
 }
+
