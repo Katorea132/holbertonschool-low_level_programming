@@ -7,7 +7,7 @@
  * @argv: Holds the arguments in strings
  * Return: 0
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int a = 0;
 	int b, c;
@@ -15,12 +15,13 @@ int main (int argc, char *argv[])
 	if (argc < 2)
 	{
 		printf("0\n");
-		return(0);
+		return (0);
 	}
 	else
 	{
 		for (b = 1; b < argc; b++)
 		{
+
 			for (c = 0; argv[b][c] != 0; c++)
 			{
 				if (!isdigit(argv[b][c]))
