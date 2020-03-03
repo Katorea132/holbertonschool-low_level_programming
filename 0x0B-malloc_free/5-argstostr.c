@@ -5,7 +5,7 @@
  * @av: Holds the pointers to the string arguments
  * Return: returns a pointer to a char
  */
- char *argstostr(int ac, char **av)
+char *argstostr(int ac, char **av)
 {
 	int i, j, k;
 	char *conc;
