@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * main - prints the name of the program
- * @argc: Counts the number of arguments entered
- * @argv: Holds the arguments in a string
- * Return: 0;
+ * main - Prints name of itself
+ * @argc: Counts arguments
+ * @argv: Holds arguments in a string way
+ * Return: 0
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
