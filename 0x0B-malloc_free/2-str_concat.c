@@ -10,6 +10,14 @@ char *str_concat(char *s1, char *s2)
 	char *conc;
 	int lens1, lens2, i;
 
+	if (s1 == 0)
+	{
+		s1 = "";
+	}
+	if (s2 == 0)
+	{
+		s2 = "";
+	}
 	for (lens1 = 0; s1[lens1] != 0; lens1++)
 	{
 	}
