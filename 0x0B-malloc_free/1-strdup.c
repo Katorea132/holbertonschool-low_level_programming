@@ -1,14 +1,14 @@
 #include <stdlib.h>
 /**
  * _strdup - Returns a pointer to a newly allocated space in memory
- * @str = Holds the string to be copied
+ * @str: Holds the string to be copied
  * Return: a pointer to a char
  */
 char *_strdup(char *str)
 {
 	char *strc;
 	int i;
-	
+
 	if (str == 0)
 	{
 		return (0);
