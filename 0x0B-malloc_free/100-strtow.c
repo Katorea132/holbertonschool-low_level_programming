@@ -39,7 +39,7 @@ char **strtow(char *str)
 			}
 			for (l = 0; l < lar; l++, i++)
 				sepa[j][l] = str[i];
-			sepa[j++][m] = 0;
+			sepa[j++][l] = 0;
 		}
 	}
 	sepa[j] = 0;
