@@ -37,7 +37,7 @@ char **strtow(char *str)
 				free(sepa);
 				return (0);
 			}
-			for (l = 0; l < lar; m++, i++)
+			for (l = 0; l < lar; l++, i++)
 				sepa[j][l] = str[i];
 			sepa[j++][m] = 0;
 		}
