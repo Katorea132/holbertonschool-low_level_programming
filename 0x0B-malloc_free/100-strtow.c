@@ -6,10 +6,12 @@
  */
 char **strtow(char *str)
 {
-	int i, j, k, lar, val, l;
+	int i, j, k, l;
+	int val, lar;
 	char **sepa;
 
-	if (str == 0 || str == "")
+	val = k = 0;
+	if (str == 0 || str[0] == 0)
 		return (0);
 	for (i = 0; str[i] != 0; i++)
 	{
@@ -21,27 +23,26 @@ char **strtow(char *str)
 	sepa = malloc((val + 1) * sizeof(char *));
 	if (sepa == 0)
 		return (0);
-	j = 0;
-	for (i = 0; str[i] != 0 && j < val; i++)
+	for (i = 0; str[i] !=  0 && k < val; i++)
 	{
 		if (str[i] != ' ')
 		{
-			for (lar = 0, k = i; str[k] != ' ' && str[k] != 0; k++, lar++)
+			for (lar = 0, j = i; str[j] != ' ' && str[j] != 0; j++, lar++)
 			{
 			}
-			sepa[j] = malloc((lar + 1) * sizeof(char));
-			if (sepa[j] == 0)
+			sepa[k] = malloc((lar + 1) * sizeof(char));
+			if (sepa[k] == 0)
 			{
-				for (j -= 1; j >= 0; j++)
-					free(sepa[j]);
+				for (k = k - 1; k >= 0; k++)
+					free(sepa[k]);
 				free(sepa);
 				return (0);
 			}
 			for (l = 0; l < lar; l++, i++)
-				sepa[j][l] = str[i];
-			sepa[j++][l] = 0;
+				sepa[k][l] = str[i];
+			sepa[k++][l] = 0;
 		}
 	}
-	sepa[j] = 0;
+	sepa[k] = 0;
 	return (sepa);
 }
