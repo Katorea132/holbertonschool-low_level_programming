@@ -69,17 +69,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 3 || !(_isdigit(argv[1])) || !(_isdigit(argv[2])))
 	{
-		printf("Error\n");
-		exit(98);
+		printf("Error\n"), exit(98);
 	}
-	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]);
-	len = len1 + len2;
+	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]), len = len1 + len2;
 	res = _calloc(len, sizeof(int *));
 	if (res == 0)
 		printf("Error\n"), exit(98);
-	for (i = len2 - 1; i > -1; i--)
+	for (i = len2 - 1, car = 0; i > -1; i--)
 	{
-		car = 0;
 		for (j = len1 - 1; j > -1; j--)
 		{
 			pro = (argv[2][i] - '0') * (argv[1][j] - '0');
@@ -95,8 +92,11 @@ int main(int argc, char *argv[])
 	}
 	if (res[0] == 0 && res[1] == 0)
 		printf("0");
+	else if (res[0] == 0)
+		for (i = 1; i < len; i++)
+			printf("%d", res[i]);
 	else
-		for (; i < len; i++)
+		for (i = 1; i < len; i++)
 			printf("%d", res[i]);
 	printf("\n");
 	free(res);
