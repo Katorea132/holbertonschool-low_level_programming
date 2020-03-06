@@ -8,12 +8,12 @@
  */
 int _isdigit(char *c)
 {
-    int i;
-    
+	int i;
+
 	for (i = 0; c[i] != 0; i++)
 	{
-	    if (c[i] < '0' || c[i] > '9')
-	        return (0);
+		if (c[i] < '0' || c[i] > '9')
+			return (0);
 	}
 	return (1);
 }
@@ -26,10 +26,8 @@ int _strlen(char *s)
 {
 	int a;
 
-	for (a = 0; s[a] != '\0';)
-	{
-	   ++a;
-	}
+	for (a = 0; s[a] != 0;)
+		++a;
 	return (a);
 }
 /**
