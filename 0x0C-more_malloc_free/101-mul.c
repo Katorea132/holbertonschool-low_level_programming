@@ -94,12 +94,15 @@ int main(int argc, char *argv[])
 			res[(i + j)] += car;
 		}
 	}
-	if (res[0] == 0)
-		i = 1;
+	if (res[0] == 0 && res[1] == 0)
+	{
+		printf("0");
+	}
 	else
-		i = 0;
-	for (; i < len; i++)
-		printf("%d", res[i]);
+	{
+		for (; i < len; i++)
+			printf("%d", res[i]);
+	}
 	printf("\n");
 	free(res);
 	return (0);
