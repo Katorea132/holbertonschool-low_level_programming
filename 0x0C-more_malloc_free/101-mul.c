@@ -18,24 +18,6 @@ int _isdigit(char *c)
 	return (1);
 }
 /**
- * _memset - Fills the first n bytes of the memory area
- * @s: points to the area
- * @b: Holds the constant byte
- * @n: Determines the amount of bytes
- * Return: returns a char
- */
-void *_memset(void *s, int b, unsigned int n)
-{
-    if (n != 0)
-    {
-        char *i = s;
-        do {
-            *i++ = b;
-        } while (--n);
-    }
-	return (s);
-}
-/**
  * _strlen - It returns the lenght of a string
  * @s: Holds the string
  * Return: none
@@ -82,52 +64,45 @@ void *_calloc(unsigned int nmemb, unsigned int size)
  * @argv: Holds arguments
  * Return: 0
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    int i, j, len, siz1, siz2, car, pro;
-    int *res;
-    
-    if (argc != 3 || !(_isdigit(argv[1])) || !(_isdigit(argv[2])))
-    {
-        printf("Error\n");
-        exit(98);
-    }
-    siz1 = _strlen(argv[1]);
-    siz2 = _strlen(argv[2]);
-    len = siz1 + siz2;
-    res = calloc(len, sizeof(int *));
-    if (res = 0)
-    {
-        printf("Error\n");
-        exit (98);
-    }
-    for (i = siz2 - 1; i >= 0; i--)
-    {
-        car = 0;
-        for (j = siz1 - 1; j >= 0; j--)
-        {
-            pro = (argv[2][i] - '0') * (argv[1][j] - '0');
-            car = (pro / 10);
-            res[(i + j) + 1] += (pro % 10);
-            if (res[(i + j) + 1] > 9)
-            {
-                res[i + j] += res[(i + j) + 1] / 10;
-                res[(i + j) + 1] = res[(i + j) + 1] % 10;
-            }
-            res[i + j] += car;
-        }
-    }
-    if (res[0] == 0)
-    {
-        i = 1;
-    }
-    else
-    {
-        i = 0;
-    }
-    for (; i < len; i++)
-        printf("%d", res[i]);
-    printf("\n");
-    free(res);
-    return (0);
+	int i, j, len, car, pro, len1, len2;
+	int *res;
+
+	if (argc != 3 || !(_isdigit(argv[1])) || !(_isdigit(argv[2])))
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	len1 = _strlen(argv[1]);
+	len2 = _strlen(argv[2]);
+	len = len1 + len2;
+	res = _calloc(len, sizeof(int *));
+	if (res == 0)
+		printf("Error\n"), exit(98);
+	for (i = len2 - 1; i > -1; i--)
+	{
+		car = 0;
+		for (j = len1 - 1; j > -1; j--)
+		{
+			pro = (argv[2][i] - '0') * (argv[1][j] - '0');
+			car =  (pro / 10);
+			res[(i + j) + 1] += (pro % 10);
+			if (res[(i + j) + 1] > 9)
+			{
+				res[i + j] += res[(i + j) + 1] / 10;
+				res[(i + j) + 1] = res[(i + j) + 1] % 10;
+			}
+			res[(i + j)] += car;
+		}
+	}
+	if (res[0] == 0)
+		i = 1;
+	else
+		i = 0;
+	for (; i < len; i++)
+		printf("%d", res[i]);
+	printf("\n");
+	free(res);
+	return (0);
 }
