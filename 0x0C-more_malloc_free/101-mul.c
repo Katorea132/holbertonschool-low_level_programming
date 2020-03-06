@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	len1 = _strlen(argv[1]);
 	len2 = _strlen(argv[2]);
 	len = len1 + len2;
-	res = calloc(len, sizeof(int *));
+	res = _calloc(len, sizeof(int *));
 	if (res == 0)
 		printf("Error\n"), exit(98);
 	for (i = len2 - 1; i > -1; i--)
