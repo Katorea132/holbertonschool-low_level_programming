@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 /**
  * _isdigit - This will tell if the variable is a 0 or a 9
  * @c: This holds the variable
