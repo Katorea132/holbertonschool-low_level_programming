@@ -72,8 +72,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	len1 = _strlen(argv[1]);
-	len2 = _strlen(argv[2]);
+	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]);
 	len = len1 + len2;
 	res = _calloc(len, sizeof(int *));
 	if (res == 0)
@@ -95,14 +94,10 @@ int main(int argc, char *argv[])
 		}
 	}
 	if (res[0] == 0 && res[1] == 0)
-	{
 		printf("0");
-	}
 	else
-	{
 		for (; i < len; i++)
 			printf("%d", res[i]);
-	}
 	printf("\n");
 	free(res);
 	return (0);
