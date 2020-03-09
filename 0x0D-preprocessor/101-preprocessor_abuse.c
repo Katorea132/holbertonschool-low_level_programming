@@ -1,3 +1,2 @@
 #error Hello, Holberton
-main()
-{}
+main() {}
