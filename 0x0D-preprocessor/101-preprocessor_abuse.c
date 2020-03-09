@@ -1,0 +1,3 @@
+#error Hello, Holberton
+main()
+{}
