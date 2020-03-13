@@ -47,6 +47,7 @@ void str (va_list arg)
 	if (s == 0)
 		printf("(nil)");
 	else
+		printf("%s", s);
 
 }
 void print_all(const char * const format, ...)
@@ -61,10 +62,11 @@ void print_all(const char * const format, ...)
 		{0, 0}
 	};
 
-	i = j = 0;
+	i = 0;
 	va_start(waido, format);
 	while (format != 0 && format[i] != 0)
 	{
+		j = 0;
 		while (typin[j].op[0] != 0)
 		{
 			if (typin[j].op[0] == format[i])
