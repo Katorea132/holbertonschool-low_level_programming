@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 /**
- * print_ all - prints anything that is sent
- * @format: Holds a string, each character points to a type of data
- * @...: Holds all the arguments
- * Return: none
- */
-/**
  * car - Prints a character
  * @arg: Holds the va_list
  * Return: none
@@ -50,6 +44,12 @@ void str (va_list arg)
 		printf("%s", s);
 
 }
+/**
+ * print_ all - prints anything that is sent
+ * @format: Holds a string, each character points to a type of data
+ * @...: Holds all the arguments
+ * Return: none
+ */
 void print_all(const char * const format, ...)
 {
 	int i, j;
@@ -67,12 +67,14 @@ void print_all(const char * const format, ...)
 	while (format != 0 && format[i] != 0)
 	{
 		j = 0;
-		while (typin[j].op[0] != 0)
+		while (typin[j].op != 0)
 		{
 			if (typin[j].op[0] == format[i])
+			{
 				typin[j].f(waido);
-			if (format[i + 1] != 0)
-				printf(", ");
+				if (format[i + 1] != 0)
+		            printf(", ");
+			}
 			j++;
 		}
 		i++;
