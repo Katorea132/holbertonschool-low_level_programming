@@ -39,9 +39,8 @@ void str(va_list arg)
 
 	s = va_arg(arg, char *);
 	if (s == 0)
-		printf("(nil)");
-	else
-		printf("%s", s);
+		s = "(nil)";
+	printf("%s", s);
 
 }
 /**
