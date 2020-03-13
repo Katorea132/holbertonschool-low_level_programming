@@ -1,7 +1,7 @@
 #ifndef VAR
 #define VAR
 /**
- * struct op - Struct op
+ * struct type - Struct type
  *
  * @op: The type
  * @f: The function associated

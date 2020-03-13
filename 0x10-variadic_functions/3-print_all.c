@@ -6,7 +6,7 @@
  * @arg: Holds the va_list
  * Return: none
  */
-void car (va_list arg)
+void car(va_list arg)
 {
 	printf("%c", va_arg(arg, int));
 }
@@ -15,7 +15,7 @@ void car (va_list arg)
  * @arg: Holds the va_list
  * Return: none
  */
-void inte (va_list arg)
+void inte(va_list arg)
 {
 	printf("%d", va_arg(arg, int));
 }
@@ -24,7 +24,7 @@ void inte (va_list arg)
  * @arg: Holds the va_list
  * Return: none
  */
-void flo (va_list arg)
+void flo(va_list arg)
 {
 	printf("%f", va_arg(arg, double));
 }
@@ -33,7 +33,7 @@ void flo (va_list arg)
  * @arg: Holds the va_list
  * Return: none
  */
-void str (va_list arg)
+void str(va_list arg)
 {
 	char *s;
 
@@ -45,7 +45,7 @@ void str (va_list arg)
 
 }
 /**
- * print_ all - prints anything that is sent
+ * print_all - prints anything that is sent
  * @format: Holds a string, each character points to a type of data
  * @...: Holds all the arguments
  * Return: none
@@ -73,7 +73,7 @@ void print_all(const char * const format, ...)
 			{
 				typin[j].f(waido);
 				if (format[i + 1] != 0)
-		            printf(", ");
+					printf(", ");
 			}
 			j++;
 		}
