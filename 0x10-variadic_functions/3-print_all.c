@@ -39,7 +39,9 @@ void str(va_list arg)
 
 	s = va_arg(arg, char *);
 	if (s == 0)
+	{
 		s = "(nil)";
+	}
 	printf("%s", s);
 
 }
@@ -60,6 +62,7 @@ void print_all(const char * const format, ...)
 		{"s", str},
 		{0, 0}
 	};
+	char *s1 = "", *s2 = ", ";
 
 	i = 0;
 	va_start(waido, format);
@@ -70,9 +73,9 @@ void print_all(const char * const format, ...)
 		{
 			if (typin[j].op[0] == format[i])
 			{
+				printf("%s", s1);
 				typin[j].f(waido);
-				if (format[i + 1] != 0)
-					printf(", ");
+				s1 = s2;
 			}
 			j++;
 		}
