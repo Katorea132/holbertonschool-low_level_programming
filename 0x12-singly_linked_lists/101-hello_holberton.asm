@@ -1,12 +1,16 @@
 section .data
-	txt db "Hello, Holberton",10
+	txt db "Hello, Holberton", 10
 
 section .text
-	extern printf
 	global main
 
 main:
-	mov rdi, txt
-	mov al,0
-	call printf
-	ret
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, txt
+	mov rdx, 17
+	syscall
+
+	mov rax,60
+	mov rdi, 0
+	syscall
