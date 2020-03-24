@@ -24,7 +24,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			*head = lili;
 			return (lili);
 		}
-		else if ((i + 1) == idx)
+		else if (i == (idx - 1))
 		{
 			lili = malloc(sizeof(listint_t));
 			if (lili == 0)
