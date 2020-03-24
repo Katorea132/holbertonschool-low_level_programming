@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+ * free_listint_safe - Frees a list
+ * @h: Holds a pointer to the pointer of head
+ * Return: amount of nodes
+ */
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *tmp, *tmp1, *tmp2;
@@ -18,7 +23,7 @@ size_t free_listint_safe(listint_t **h)
 				}
 			}
 			tmp2 = tmp->next;
-			free (tmp);
+			free(tmp);
 			tmp = tmp2;
 		}
 		*h = 0;
