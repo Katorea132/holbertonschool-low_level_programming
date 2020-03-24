@@ -24,12 +24,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			*head = lili;
 			return (lili);
 		}
-		if ((i + 1) == idx)
+		else if ((i + 1) == idx)
 		{
 			lili = malloc(sizeof(listint_t));
 			if (lili == 0)
 				return (0);
 			lili->n = n;
+			lili->next = 0;
 			lili->next = tmp->next;
 			tmp->next = lili;
 			return (lili);
