@@ -9,10 +9,12 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *lili, *tmp;
-	unsigned int i;
+	unsigned int i, y;
 
 	tmp = *head;
-	for (i = 0; tmp != 0; i++)
+	while (tmp)
+		y++;
+	for (i = 0; tmp != 0 && idx < y; i++)
 	{
 		if (idx == 0)
 		{
