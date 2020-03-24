@@ -11,6 +11,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *lili, *tmp;
 	unsigned int i;
 
+	if (head == 0)
+		return (0);
 	tmp = *head;
 	for (i = 0; tmp != 0; i++)
 	{
