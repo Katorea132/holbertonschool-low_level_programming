@@ -9,26 +9,23 @@ int main(int argc, char *argv[])
 {
 	int fd, fd1, ccki, ccko;
 	char BUFFER[1024];
-
+	
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-		argv[1]), exit(98);
-	fd1 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+	fd1 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC);
 	if (fd1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv
-		[1]), exit(98);
-	for (ccki = 1, ccko = 1; ccki != -1;)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	for (ccki = 1; ccki;)
 	{
 		ccki = read(fd, BUFFER, 1024);
 		if (ccki == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
-			exit(98);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		if (ccki > 0)
 		{
-			ccko = write(fd, BUFFER, ccki);
+			ccko = write(fd1, BUFFER, ccki);
 			if (ccko == -1)
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
@@ -37,6 +34,7 @@ int main(int argc, char *argv[])
 	if (ccko == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd), exit(100);
 	ccko = close(fd1);
+	if (ccko == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 	return (0);
 }
