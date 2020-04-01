@@ -1,5 +1,43 @@
 #include "holberton.h"
 /**
+ * main - program
+ * @argc: argument count
+ * @argv:: arguments
+ * Return: 1 on success 0 on failure
+ */
+int main(int argc, char *argv[])
+{
+	int fd, fd1;
+	Elf64_Ehdr elfi;
+
+	if (argc != 2)
+		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n"), exit(98);
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		dprintf(STDERR_FILENO, "Can't open file: %s\n", argv[1]), exit(98);
+	fd1 = read(fd, &elfi, sizeof(Elf64_Ehdr));
+	if (fd1 == -1)
+		dprintf(STDERR_FILENO, "Can't read from file: %s\n", argv[1]), exit(98);
+	if (elfi.e_ident[0] == 0x7f && elfi.e_ident[1] == 'E' &&
+	elfi.e_ident[2] == 'L' && elfi.e_ident[3] == 'F')
+	{
+		printf("ELF Header:\n");
+	}
+	else
+		dprintf(STDERR_FILENO, "Not ELF file: %s\n", argv[1]), exit(98);
+	pmagic(elfi);
+	pclass(elfi);
+	pdata(elfi);
+	pversion(elfi);
+	pwasabi(elfi);
+	pabiversion(elfi);
+	ptype(elfi);
+	pentry(elfi);
+	if (close(fd))
+		dprintf(STDERR_FILENO, "Error closing file descriptor: %d\n", fd), exit(98);
+	return (0);
+}
+/**
  * pmagic - Prints magic
  * @elfi: Holds elfi
  * Return: none
@@ -224,42 +262,4 @@ void pentry(Elf64_Ehdr elfi)
 			printf("%02x", p[i]);
 		printf("\n");
 	}
-}
-
-/**
- * main - program
- * @ac: argument count
- * @av: argument vector
- *
- * Return: 1 on success 0 on failure
- */
-int main(int argc, char *argv[])
-{
-	int fd, fd1;
-	Elf64_Ehdr elfi;
-
-	if (argc != 2)
-		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n"), exit(98);
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-		dprintf(STDERR_FILENO, "Can't open file: %s\n", argv[1]), exit(98);
-	fd1 = read(fd, &elfi, sizeof(Elf64_Ehdr));
-	if (fd1 == -1)
-		dprintf(STDERR_FILENO, "Can't read from file: %s\n", argv[1]), exit(98);
-	if (elfi.e_ident[0] == 0x7f && elfi.e_ident[1] == 'E' &&
-	elfi.e_ident[2] == 'L' && elfi.e_ident[3] == 'F')
-		printf("ELF Header:\n");
-	else
-		dprintf(STDERR_FILENO, "Not ELF file: %s\n", argv[1]), exit(98);
-	pmagic(elfi);
-	pclass(elfi);
-	pdata(elfi);
-	pversion(elfi);
-	pwasabi(elfi);
-	pabiversion(elfi);
-	ptype(elfi);
-	pentry(elfi);
-	if (close(fd))
-		dprintf(STDERR_FILENO, "Error closing file descriptor: %d\n", fd), exit(98);
-	return (0);
 }
