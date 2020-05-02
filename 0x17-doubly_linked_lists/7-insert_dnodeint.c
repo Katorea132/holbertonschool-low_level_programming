@@ -15,11 +15,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	tmp = *h;
 	if (len < idx)
 		return (0);
-	else if(idx == 0)
+	else if (idx == 0)
 		return (add_dnodeint(h, n));
 	else if (idx == len)
 		return (add_dnodeint_end(h, n));
-	else
+	else if (idx != 0 && idx != len)
 	{
 		lili = malloc(sizeof(dlistint_t));
 		if (lili)
