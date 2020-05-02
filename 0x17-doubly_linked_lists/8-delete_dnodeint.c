@@ -1,18 +1,5 @@
 #include "lists.h"
 /**
- * dlistint_len - Returns lenght of list
- * @h: Holds the head
- * Return: lenght
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t i;
-
-	for (i = 0; h; h = h->next, i++)
-		;
-	return (i);
-}
-/**
  * delete_dnodeint_at_index - Deletes a node at index
  * @head: Holds the head
  * @index: Holds the index to delete
@@ -39,10 +26,11 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		}
 		else if (i == index)
 		{
-			if (tmp->next)
-				swapn = tmp->next, swapn->prev = swapp;
 			swapp = tmp->prev;
-			swapp->next = swapn;
+			if (tmp->next)
+				swapn = tmp->next, swapn->prev = swapp, swapp->next = swapn;
+			else
+				swapp->next = 0;
 			free(tmp);
 			return (1);
 		}
