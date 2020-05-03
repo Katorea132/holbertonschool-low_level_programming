@@ -30,10 +30,14 @@ int main(int argc, char *argv[])
 	password[2] = string[(ops ^ 85) & 63]; //XOR 85 and AND 63 for ops, as index for strings - WORKING
 	printf("%c\n", password[2]);
 	for (i = 0, ops = argv[1][0]; i < len; i++)
-		if (ops <= argv[1][i])
+		if (ops < argv[1][i])
 			ops = argv[1][i];
 	srand(ops ^ 14); //So, if my logic is not mistaken, this should always return the same once rand is called because of the same seed. - CONFIMED: Always the same if same seed
 	password[3] = string[rand() & 63]; // AND on the result of the seeded rand call - SHould always be the same - CONFIRMED
 	printf("%c\n", password[3]); // WORKING - F4 PASSED, failed on F5(0xa46)
+	for (i = 0, ops = 0; i < len; i++)
+		ops += argv[1][i] * argv[1][i]; //This apparently adds the result of the multiplication of each character against itself - CONFIMED -WORKING
+	password[4] = string[(ops ^ 239) & 63]; //XOR for ops 239 and AND 63 - WORKING - F5 PASSED, failed on f6(0xa78)
+	printf("%c\n", password[4]);	
 	return (0);
 }
