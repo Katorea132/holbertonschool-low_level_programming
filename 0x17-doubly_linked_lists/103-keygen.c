@@ -25,5 +25,9 @@ int main(int argc, char *argv[])
 	}
 	password[1] = string[(ops ^ 79) & 63]; //Again, XOR and AND with 85 and 63 over the result of the addition - WORKING
 	printf("%c\n", password[1]);
+	for (i = 0, ops = 1; i < len; i++)
+		ops *= argv[1][i]; //Multiplication of the words againt each other
+	password[2] = string[(ops ^ 85) & 63]; //XOR 85 and AND 63 for ops, as index for strings - WORKING
+	printf("%c\n", password[2]);
 	return (0);
 }
