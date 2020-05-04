@@ -1,4 +1,8 @@
 #include <stdlib.h>
+void srand(unsigned int seed)
+{
+	seed = 1;
+}
 int rand(void)
 {
 	static int h = 0;
