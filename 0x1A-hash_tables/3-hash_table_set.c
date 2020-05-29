@@ -11,7 +11,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new = 0, *head = 0;
 
-	if (!ht | !*key | !key | !value)
+	if (!ht | !key | !value)
 		return (0);
 	head = ht->array[key_index((unsigned char *) key, ht->size)];
 	for (; head; head = head->next)
