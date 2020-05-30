@@ -73,31 +73,30 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 int sorted_node(shash_table_t *ht, shash_node_t *new)
 {
-	shash_node_t *tmp = 0;
+	shash_node_t *head;
 
-	new->sprev = 0;
-	new->snext = ht->shead;
-	if (!ht->shead || strcmp(new->key, ht->shead->key) <= 0)
+	if (!ht)
+		return (0);
+	head = ht->shead;
+	if (!head || strcmp(new->key, head->key) < 0)
 	{
+		new->snext = head;
 		ht->shead = new;
-		if (!ht->stail)
+		if (head)
+			head->sprev = new;
+		else
 			ht->stail = new;
-		if (new->snext)
-			new->snext->sprev = new;
 		return (1);
 	}
-	while (new->snext && strcmp(new->key, new->snext->key) > 0)
-	{
-		tmp = new->snext;
-		new->snext = tmp->snext;
-		new->sprev = tmp;
-	}
-	if (tmp)
-		tmp->snext = new;
-	if (new->snext)
-		new->snext->sprev = new;
+	while (head->snext && strcmp(new->key, head->snext->key) >= 0)
+		head = head->snext;
+	new->sprev = head;
+	new->snext = head->snext;
+	if (head->snext)
+		head->snext->sprev = new;
 	else
 		ht->stail = new;
+	head->snext = new;
 	return (1);
 }
 /**
