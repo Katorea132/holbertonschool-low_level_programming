@@ -12,7 +12,7 @@ clean:
 	$(RM) *~ *.swp $(NAME)
 
 oclean:
-	rm $(OBJ)
+	$(RM) $(OBJ)
 
 fclean:
 	$(RM) *~ $(NAME) $(OBJ)
